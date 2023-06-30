@@ -91,3 +91,8 @@ variable "master-password" {
   type        = string
   description = "RDS master password"
 }
+
+variable "ami" {
+  type        = string
+  description = "AMI ID for the launch template"
+}
