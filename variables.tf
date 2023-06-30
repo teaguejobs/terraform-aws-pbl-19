@@ -43,7 +43,30 @@ variable "tags" {
   default     = {}
 }
 
-variable "ami" {
+variable "environment" {
+  type        = string
+  description = "Enviroment"
+}
+
+variable "ami-bastion" {
+  type        = string
+  description = "AMI ID for the launch template"
+}
+
+
+variable "ami-web" {
+  type        = string
+  description = "AMI ID for the launch template"
+}
+
+
+variable "ami-nginx" {
+  type        = string
+  description = "AMI ID for the launch template"
+}
+
+
+variable "ami-sonar" {
   type        = string
   description = "AMI ID for the launch template"
 }
@@ -58,6 +81,7 @@ variable "account_no" {
   description = "the account number"
 }
 
+
 variable "master-username" {
   type        = string
   description = "RDS admin username"
@@ -66,9 +90,4 @@ variable "master-username" {
 variable "master-password" {
   type        = string
   description = "RDS master password"
-}
-
-variable "environment" {
-  type        = string
-  description = "Enviroment"
 }
