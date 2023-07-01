@@ -1,9 +1,4 @@
 # ------------- VPC/main.tf----------------------
-# Get list of availability zones
-data "aws_availability_zones" "available" {
-  state = "available"
-}
-
 # Create VPC
 resource "aws_vpc" "main" {
   cidr_block                     = var.vpc_cidr
@@ -19,7 +14,10 @@ resource "aws_vpc" "main" {
     },
   )
 }
-
+# Get list of availability zones
+data "aws_availability_zones" "available" {
+  state = "available"
+}
 
 # Create public subnets
 resource "aws_subnet" "public" {
