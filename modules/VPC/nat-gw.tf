@@ -1,6 +1,6 @@
 #------------VPC/nat-gw.tf-------------
 resource "aws_eip" "nat_eip" {
-  vpc standard       = true
+  vpc     = true
   depends_on = [aws_internet_gateway.ig]
 
   tags = merge(
