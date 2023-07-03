@@ -3,18 +3,33 @@ resource "aws_kms_key" "ACS-kms" {
   description = "KMS key "
   policy      = <<EOF
   {
-  "Version": "2012-10-17",
-  "Id": "kms-key-policy",
-  "Statement": [
-    {
-      "Sid": "Enable IAM User Permissions",
-      "Effect": "Allow",
-      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/teaguejobs" },
-      "Action": "kms:*",
-      "Resource": "*"
-    }
-  ]
-}
+   "Version": "2012-10-17",
+   "Id": "kms-key-policy",
+   "Statement": [
+     {
+       "Sid": "Enable IAM User Permissions",
+       "Effect": "Allow",
+       "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/teaguejobs" },
+       "Action": [
+         "kms:*"
+       ],
+       "Resource": "*"
+     },
+     {
+       "Sid": "Allow Updating Key Policy",
+       "Effect": "Allow",
+       "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/teaguejobs" },
+       "Action": "kms:PutKeyPolicy",
+       "Resource": "*",
+       "Condition": {
+         "StringEquals": {
+           "kms:ViaService": "kms.amazonaws.com",
+           "kms:CallerAccount": "${var.account_no}"
+         }
+       }
+     }
+   ]
+ }
 EOF
 }
 
