@@ -15,7 +15,7 @@ resource "aws_kms_key" "ACS-kms" {
 #     }
 #   ]
 # }
-EOF
+#EOF
 }
 
 # create key alias
