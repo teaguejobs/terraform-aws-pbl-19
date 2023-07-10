@@ -2,7 +2,6 @@
 #############################
 ##creating bucket for s3 backend
 #########################
-
 resource "aws_s3_bucket" "terraform-state" {
   bucket        = "pbl-teague-18"
   force_destroy = true
