@@ -34,7 +34,6 @@ master-password = "devopspblproject"
 
 master-username = "teague"
 
-
 tags = {
   Owner-Email     = "hacksoftteam2012@gmail.com"
   Managed-By      = "Terraform"
