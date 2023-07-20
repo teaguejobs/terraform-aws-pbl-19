@@ -9,11 +9,9 @@
 #   }
 # }
 
-
 terraform {
   backend "remote" {
     organization = "teague-terraform"
-
     workspaces {
       name = "terraform-aws-pbl-19"
     }
