@@ -9,7 +9,6 @@ resource "aws_sns_topic" "ACS-sns" {
   name = "Default_CloudWatch_Alarms_Topic"
 }
 
-
 # creating notification for all the auto scaling groups
 resource "aws_autoscaling_notification" "david_notifications" {
   group_names = [
