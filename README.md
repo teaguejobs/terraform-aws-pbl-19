@@ -40,7 +40,7 @@ https://www.terraform.io/docs/cli/commands/graph.html
      - RDS endpoints for wordpress and tooling
      - Database name, password and username for wordpress and tooling
      - Access point ID for wordpress and tooling
-     - Internal load balancee DNS for nginx reverse proxy
+     - Internal load balancer DNS for nginx reverse proxy
 
 - run ansible script
 - check the website
